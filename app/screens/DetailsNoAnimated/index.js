@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import {
   View,
@@ -7,13 +7,11 @@ import {
   SafeAreaView,
   StyleSheet,
   TouchableHighlight,
-  Animated,
-  FlatList,
-  ScrollView,
 } from 'react-native';
 import IconAntDesign from 'react-native-vector-icons/AntDesign';
 import IconMaterial from 'react-native-vector-icons/MaterialIcons';
-import { SharedElement } from 'react-navigation-shared-element';
+import { FlatList, ScrollView } from 'react-native-gesture-handler';
+
 import {
   appStyle,
   COLORS,
@@ -22,27 +20,9 @@ import {
 } from '../../config/styles';
 import { API } from '../../config';
 
-function Details({ navigation, route }) {
+function DetailsNoAnimated({ navigation, route }) {
   const { product } = route.params;
   const [productDetails, setProductDetails] = useState({});
-  const mountedAnimated = useRef(new Animated.Value(0)).current;
-
-  const translateY = mountedAnimated.interpolate({
-    inputRange: [0, 1],
-    outputRange: [50, 0],
-  });
-
-  const animation = (toValue, delay) =>
-    Animated.timing(mountedAnimated, {
-      toValue,
-      duration: 500,
-      delay,
-      useNativeDriver: true,
-    });
-
-  useEffect(() => {
-    Animated.parallel([animation(1, 500)]).start();
-  });
 
   useEffect(() => {
     axios({ method: 'GET', url: `${API}getbyid?id=${product.id}` })
@@ -57,9 +37,7 @@ function Details({ navigation, route }) {
           <View style={{ ...styles.HeaderContent }}>
             <TouchableHighlight
               underlayColor={COLORS.lightGray}
-              onPress={() => {
-                animation(0).start(() => navigation.goBack());
-              }}
+              onPress={() => navigation.goBack()}
               style={{
                 ...styles.HeaderButton,
               }}>
@@ -71,51 +49,42 @@ function Details({ navigation, route }) {
           </View>
         </View>
         <View style={{ ...styles.ProductOverView }}>
-          <SharedElement id={`id.${product.alias}.photo`}>
-            <Image
-              source={{ uri: product.image }}
-              style={{ ...styles.ProductImage }}
-            />
-          </SharedElement>
-          <Animated.View
-            style={{ opacity: mountedAnimated, transform: [{ translateY }] }}>
-            <Text style={{ ...appStyle.TitleSection }}>Size</Text>
-            <FlatList
-              style={{ ...styles.ProductSizeContent }}
-              bounces={false}
-              horizontal
-              showsHorizontalScrollIndicator={false}
-              data={productDetails.size}
-              keyExtractor={(item) => item}
-              contentContainerStyle={{ marginVertical: PROPERTIVE.space1 }}
-              renderItem={({ item }) => (
-                <View style={{ ...styles.ProductSize }}>
-                  <Text>{item}</Text>
-                </View>
-              )}
-            />
+          <Image
+            source={{ uri: product.image }}
+            style={{ ...styles.ProductImage }}
+          />
 
-            <View>
-              <TouchableHighlight style={{ ...styles.BuyButton }}>
-                <View style={{ ...styles.BuyButtonContent }}>
-                  <Text style={{ ...styles.BuyButtonTxt }}>Buy</Text>
-                  <IconAntDesign
-                    name="shoppingcart"
-                    color={COLORS.white}
-                    size={PROPERTIVE.h2}
-                  />
-                </View>
-              </TouchableHighlight>
-            </View>
-          </Animated.View>
+          <Text style={{ ...appStyle.TitleSection }}>Size</Text>
+          <FlatList
+            style={{ ...styles.ProductSizeContent }}
+            bounces={false}
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            data={productDetails.size}
+            keyExtractor={(item) => item}
+            contentContainerStyle={{ marginVertical: PROPERTIVE.space1 }}
+            renderItem={({ item }) => (
+              <View style={{ ...styles.ProductSize }}>
+                <Text>{item}</Text>
+              </View>
+            )}
+          />
+
+          <View>
+            <TouchableHighlight style={{ ...styles.BuyButton }}>
+              <View style={{ ...styles.BuyButtonContent }}>
+                <Text style={{ ...styles.BuyButtonTxt }}>Buy</Text>
+                <IconAntDesign
+                  name="shoppingcart"
+                  color={COLORS.white}
+                  size={PROPERTIVE.h2}
+                />
+              </View>
+            </TouchableHighlight>
+          </View>
         </View>
 
-        <Animated.View
-          style={{
-            ...styles.ProductInfo,
-            opacity: mountedAnimated,
-            transform: [{ translateY }],
-          }}>
+        <View style={{ ...styles.ProductInfo }}>
           <Text style={{ ...styles.ProductName }}>{productDetails.name}</Text>
 
           <Text style={{ ...styles.ProductPrice }}>
@@ -131,13 +100,8 @@ function Details({ navigation, route }) {
               {productDetails.description + productDetails.shortDescription}
             </Text>
           </ScrollView>
-        </Animated.View>
-        <Animated.View
-          style={{
-            ...styles.ProductRelated,
-            opacity: mountedAnimated,
-            transform: [{ translateY }],
-          }}>
+        </View>
+        <View style={{ ...styles.ProductRelated }}>
           <Text style={{ ...appStyle.TitleSection }}>Related</Text>
           <FlatList
             horizontal
@@ -150,32 +114,23 @@ function Details({ navigation, route }) {
                 underlayColor={COLORS.darkGray}
                 onPress={() => navigation.push('Details', { product: item })}
                 style={{ ...styles.ProductRelatedItem }}>
-                <View>
-                  <SharedElement id={`id.${item.alias}.photo`}>
-                    <Image
-                      style={{ ...styles.ProductRelatedImage }}
-                      source={{ uri: item.image }}
-                    />
-                  </SharedElement>
-                  <View>
-                    <Text style={{ ...styles.ProductRelatedName }}>
-                      {item.name}
-                    </Text>
-                  </View>
-                </View>
+                <>
+                  <Image
+                    style={{ ...styles.ProductRelatedImage }}
+                    source={{ uri: item.image }}
+                  />
+                  <Text style={{ fontWeight: PROPERTIVE.semiBold }}>
+                    {item.name}
+                  </Text>
+                </>
               </TouchableHighlight>
             )}
           />
-        </Animated.View>
+        </View>
       </View>
     </SafeAreaView>
   );
 }
-
-Details.sharedElements = (route, otherRoute, showing) => {
-  const { product } = route.params;
-  return [`id.${product.alias}.photo`];
-};
 
 const styles = StyleSheet.create({
   Header: {
@@ -253,21 +208,16 @@ const styles = StyleSheet.create({
   ProductRelatedItem: {
     width: 140,
     aspectRatio: 1,
+    justifyContent: 'space-evenly',
     backgroundColor: COLORS.lightGray,
     marginRight: PROPERTIVE.space3,
     paddingHorizontal: PROPERTIVE.space2,
     borderRadius: PROPERTIVE.radius10,
-    justifyContent: 'center',
   },
   ProductRelatedImage: {
     width: 100,
     aspectRatio: 2 / 1.2,
   },
-  ProductRelatedName: {
-    marginTop: PROPERTIVE.space1,
-    fontSize: PROPERTIVE.h4,
-    fontWeight: PROPERTIVE.semiBold,
-  },
 });
 
-export default Details;
+export default DetailsNoAnimated;

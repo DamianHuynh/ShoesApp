@@ -187,7 +187,7 @@ export default function HomeScreens({ navigation }) {
                     <TouchableOpacity
                       style={{ ...styles.BestSellerButton }}
                       onPress={() =>
-                        navigation.push('Details', { product: item })
+                        navigation.push('DetailsNoAnimated', { product: item })
                       }>
                       <IconAntDesign name="right" size={24} color="#fff" />
                     </TouchableOpacity>
