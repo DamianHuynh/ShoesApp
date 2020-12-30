@@ -1,0 +1,6 @@
+export const SCREEN = {
+  HOME: 'HOME',
+  DETAIL: 'DETAIL',
+  DETAIL_NO_ANIMATION: 'DETAIL_NO_ANIMATION',
+  LOGIN: 'LOGIN',
+};
