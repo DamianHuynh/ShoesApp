@@ -1,10 +1,17 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Dimensions, StyleSheet } from 'react-native';
+import Svg, { Path } from 'react-native-svg';
 
+const { width } = Dimensions.get('window');
+
+console.log();
 export default function Cart() {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Login</Text>
-    </View>
+    <View
+      style={{
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}></View>
   );
 }

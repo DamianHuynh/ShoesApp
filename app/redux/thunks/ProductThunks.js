@@ -16,7 +16,27 @@ export const getProductByCategory = (id) => {
     productServices
       .getProductByCategory(id)
       .then(({ data: { content } }) =>
-        dispatch(ProductActions.getProductByCategory(content)),
+        dispatch(ProductActions.getProductByCategorySuccess(content)),
+      )
+      .catch(() => dispatch());
+  };
+};
+export const getProductById = (id) => {
+  return (dispatch) => {
+    productServices
+      .getProductById(id)
+      .then(({ data: { content } }) =>
+        dispatch(ProductActions.getProductByIdSuccess(content)),
+      )
+      .catch(() => dispatch());
+  };
+};
+export const getProductBestSell = () => {
+  return (dispatch) => {
+    productServices
+      .getProductBestSell()
+      .then(({ data: { content } }) =>
+        dispatch(ProductActions.getProductBestSell(content)),
       )
       .catch(() => dispatch());
   };

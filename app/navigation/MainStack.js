@@ -5,6 +5,7 @@ import DetailsNoAnimated from '../screens/DetailsNoAnimated';
 import HomeScreen from '../screens/Home';
 import DetailScreen from '../screens/Detail';
 import LoginScreen from '../screens/Login';
+import CartScreen from '../screens/Cart';
 import { SCREEN } from './Constant';
 
 const Stack = createSharedElementStackNavigator();
@@ -47,11 +48,11 @@ const FromBotTransiton = () => ({
   transitionSpec: {
     open: {
       animation: 'timing',
-      config: { duration: 700, easing: Easing.inOut(Easing.linear) },
+      config: { duration: 800, easing: Easing.inOut(Easing.linear) },
     },
     close: {
       animation: 'timing',
-      config: { duration: 700, easing: Easing.inOut(Easing.linear) },
+      config: { duration: 800, easing: Easing.inOut(Easing.linear) },
     },
   },
   cardStyleInterpolator: ({ current: { progress }, next, layouts }) => {
@@ -128,6 +129,11 @@ export default function MainStack(props) {
         <Stack.Screen
           name={SCREEN.LOGIN}
           component={LoginScreen}
+          options={FromBotTransiton}
+        />
+        <Stack.Screen
+          name={SCREEN.CART}
+          component={CartScreen}
           options={FromBotTransiton}
         />
       </Stack.Navigator>

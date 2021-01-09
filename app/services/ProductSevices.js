@@ -1,18 +1,18 @@
-import axios from 'axios';
-import { URL_API } from '../config';
+import BaseService from './BaseService';
 
-export class ProductServices {
+const PREFIX = 'Product';
+export class ProductServices extends BaseService {
   getAllCategory() {
-    return axios({
-      method: 'GET',
-      url: `${URL_API}/getAllCategory`,
-    });
+    return this.get(`/${PREFIX}/getAllCategory`);
   }
   getProductByCategory(id) {
-    return axios({
-      method: 'GET',
-      url: ` ${URL_API}/getProductByCategory?categoryId=${id}`,
-    });
+    return this.get(`/${PREFIX}/getProductByCategory?categoryId=${id}`);
+  }
+  getProductById(id) {
+    return this.get(`/${PREFIX}/getbyid?id=${id}`);
+  }
+  getProductBestSell() {
+    return this.get(`/${PREFIX}/getProductByFeature?feature=true`);
   }
 }
 

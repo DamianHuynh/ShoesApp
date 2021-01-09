@@ -2,23 +2,28 @@ import * as ProductTypes from '../constaint/ProductTypes';
 
 const initialState = {
   allCategory: [],
-  idCategory: 'ADIDAS',
-  productById: [],
+  productByCategory: [],
+  productById: {},
   bestSellProduct: [],
 };
 
 const ProductReducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case ProductTypes.GET_ALL_CATEGORY_SUCCESS: {
+      payload = payload.filter((item) => item.categoryChild.length === 2);
       state.allCategory = payload;
       return { ...state };
     }
     case ProductTypes.GET_PRODUCT_BY_CATEGORY_SUCCESS: {
+      state.productByCategory = payload;
+      return { ...state };
+    }
+    case ProductTypes.GET_PRODUCT_BY_ID_SUCCESS: {
       state.productById = payload;
       return { ...state };
     }
-    case ProductTypes.GET_ID_CATEGORY: {
-      state.idCategory = payload;
+    case ProductTypes.GET_PRODUCT_BEST_SELL_SUCCESS: {
+      state.bestSellProduct = payload;
       return { ...state };
     }
     default:

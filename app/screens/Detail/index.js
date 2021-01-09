@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import axios from 'axios';
 import {
   View,
   Text,
@@ -12,11 +11,11 @@ import {
 import IconAntDesign from 'react-native-vector-icons/AntDesign';
 import IconMaterial from 'react-native-vector-icons/MaterialIcons';
 import { SharedElement } from 'react-navigation-shared-element';
+import { productServices } from '../../services/ProductSevices';
 import * as Themes from '../../config/styles';
-import { API } from '../../config';
-import styles from './styles';
 import { SCREEN } from '../../navigation/Constant';
 import Container from '../../components/Container';
+import styles from './styles';
 
 function Detail({ navigation, route }) {
   const { product } = route.params;
@@ -44,7 +43,8 @@ function Detail({ navigation, route }) {
   }, [animation]);
 
   useEffect(() => {
-    axios({ method: 'GET', url: `${API}getbyid?id=${product.id}` })
+    productServices
+      .getProductById(product.id)
       .then(({ data: { content } }) => setProductDetails(content))
       .catch((err) => console.log(err));
   }, [product.id]);
@@ -54,13 +54,11 @@ function Detail({ navigation, route }) {
       <View style={styles.Header}>
         <View style={{ ...styles.HeaderContent }}>
           <TouchableHighlight
-            underlayColor={Themes.COLORS.lightGray}
             onPress={() => {
               animation(0).start(() => navigation.goBack());
             }}
-            style={{
-              ...styles.HeaderButton,
-            }}>
+            underlayColor={Themes.COLORS.lightGray}
+            style={{ ...styles.HeaderButton }}>
             <IconAntDesign name="left" size={20} />
           </TouchableHighlight>
           <TouchableHighlight style={{ ...styles.HeaderButton }}>

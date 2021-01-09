@@ -8,6 +8,8 @@ export const COLORS = {
   darkGray: '#a3a2a6',
   white: '#ffffff',
   vividRed: '#F82905',
+  darkBlue: '#0459a3',
+  strongCyan: '#2CB9B0',
 };
 
 export const PROPERTIVE = {
@@ -39,6 +41,7 @@ export const PROPERTIVE = {
   // size
   height,
   width,
+  size20: 20,
   size80: 80,
   size135: 135,
   size140: 140,
