@@ -1,10 +1,5 @@
-import React, { Children } from 'react';
-import {
-  TouchableHighlight,
-  TouchableOpacity,
-  Text,
-  StyleSheet,
-} from 'react-native';
+import React from 'react';
+import { TouchableHighlight, StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   buttonStyle: {

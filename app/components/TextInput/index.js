@@ -15,7 +15,7 @@ export default function TextInput({ icon, errors, touched, ...props }) {
   const animation = Animated.timing(animated, {
     toValue: 1,
     duration: 500,
-    delay: 500,
+    // delay: 300,
     useNativeDriver: true,
   });
 

@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React, { useEffect, useRef } from 'react';
 import { Easing, Animated } from 'react-native';
 import { createSharedElementStackNavigator } from 'react-navigation-shared-element';
@@ -6,6 +7,7 @@ import HomeScreen from '../screens/Home';
 import DetailScreen from '../screens/Detail';
 import LoginScreen from '../screens/Login';
 import CartScreen from '../screens/Cart';
+import OnboardScreen from '../screens/Onboard';
 import { SCREEN } from './Constant';
 
 const Stack = createSharedElementStackNavigator();
@@ -115,6 +117,7 @@ export default function MainStack(props) {
   return (
     <Animated.View style={{ flex: 1, transform: [{ scale }] }}>
       <Stack.Navigator headerMode="none">
+        <Stack.Screen name={SCREEN.ONBOARD} component={OnboardScreen} />
         <Stack.Screen name={SCREEN.HOME} component={HomeScreen} />
         <Stack.Screen
           name={SCREEN.DETAIL_NO_ANIMATION}

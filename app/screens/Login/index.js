@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { View, Text } from 'react-native';
 import styles from './styles';
 import FormContainer from '../../components/FormContainer';
@@ -30,7 +30,11 @@ export default function Login({ navigation }) {
         <Formik
           initialValues={{ email: '', password: '', remember: false }}
           validationSchema={LoginSchema}
-          onSubmit={(values) => console.log(values)}>
+          onSubmit={(values) => {
+            if (values) {
+              navigation.navigate('HOME');
+            }
+          }}>
           {({
             handleChange,
             handleBlur,
