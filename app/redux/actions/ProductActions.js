@@ -1,4 +1,4 @@
-import * as ProductTypes from '../constaint/ProductTypes';
+import * as ProductTypes from '../constant/ProductTypes';
 
 export const getAllCategorySuccess = (respone) => ({
   type: ProductTypes.GET_ALL_CATEGORY_SUCCESS,

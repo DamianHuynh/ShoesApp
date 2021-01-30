@@ -119,8 +119,8 @@ export default function MainStack(props) {
   return (
     <Animated.View style={{ flex: 1, transform: [{ scale }] }}>
       <Stack.Navigator headerMode="none">
-        <Stack.Screen name={SCREEN.ONBOARD} component={OnboardScreen} />
         <Stack.Screen name={SCREEN.CART} component={CartScreen} />
+        <Stack.Screen name={SCREEN.ONBOARD} component={OnboardScreen} />
         <Stack.Screen name={SCREEN.HOME} component={HomeScreen} />
         <Stack.Screen
           name={SCREEN.DETAIL_NO_ANIMATION}

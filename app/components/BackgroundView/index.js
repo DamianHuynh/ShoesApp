@@ -17,7 +17,7 @@ export default function BackgroundView({ children }) {
       <BlurView
         style={StyleSheet.absoluteFill}
         blurType="light"
-        blurAmount={10}
+        blurAmount={20}
         reducedTransparencyFallbackColor="white"
       />
       {children}

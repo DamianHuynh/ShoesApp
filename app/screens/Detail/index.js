@@ -18,7 +18,8 @@ import * as Themes from '../../config/styles';
 import { SCREEN } from '../../navigation/Constant';
 import Container from '../../components/Container';
 import styles from './styles';
-import { BackgroundView } from '../../components';
+import { BackgroundView, GlassView } from '../../components';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 function Detail({ navigation, route }) {
   const { product } = route.params;
@@ -61,12 +62,15 @@ function Detail({ navigation, route }) {
               onPress={() => {
                 animation(0).start(() => navigation.goBack());
               }}
-              underlayColor={Themes.COLORS.lightGray}
-              style={{ ...styles.HeaderButton }}>
-              <IconAntDesign name="left" size={20} />
+              underlayColor={Themes.COLORS.lightGray}>
+              <GlassView style={{ ...styles.HeaderButton }}>
+                <IconAntDesign name="left" size={20} />
+              </GlassView>
             </TouchableHighlight>
-            <TouchableHighlight style={{ ...styles.HeaderButton }}>
-              <IconAntDesign name="hearto" size={20} />
+            <TouchableHighlight>
+              <GlassView style={{ ...styles.HeaderButton }}>
+                <IconAntDesign name="hearto" size={20} />
+              </GlassView>
             </TouchableHighlight>
           </View>
         </View>
@@ -91,22 +95,22 @@ function Detail({ navigation, route }) {
                 marginVertical: Themes.PROPERTIVE.space1,
               }}
               renderItem={({ item }) => (
-                <View style={{ ...styles.ProductSize }}>
+                <GlassView transparent style={styles.ProductSize}>
                   <Text>{item}</Text>
-                </View>
+                </GlassView>
               )}
             />
 
             <View>
               <TouchableHighlight style={{ ...styles.BuyButton }}>
-                <View style={{ ...styles.BuyButtonContent }}>
+                <GlassView transparent style={styles.BuyButtonContent}>
                   <Text style={{ ...styles.BuyButtonTxt }}>Buy</Text>
                   <IconAntDesign
                     name="shoppingcart"
-                    color={Themes.COLORS.white}
+                    color="#000"
                     size={Themes.PROPERTIVE.h2}
                   />
-                </View>
+                </GlassView>
               </TouchableHighlight>
             </View>
           </Animated.View>
@@ -118,16 +122,23 @@ function Detail({ navigation, route }) {
             opacity: mountedAnimated,
             transform: [{ translateY }],
           }}>
-          <Text style={{ ...styles.ProductName }}>{productDetails.name}</Text>
-
-          <Text style={{ ...styles.ProductPrice }}>
-            <IconMaterial
-              name="attach-money"
-              color={Themes.COLORS.brightRed}
-              size={Themes.PROPERTIVE.h1}
-            />
-            {productDetails.price}
-          </Text>
+          <View
+            style={{
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              alignItem: 'center',
+              marginBottom: 20,
+            }}>
+            <Text style={{ ...styles.ProductName }}>{productDetails.name}</Text>
+            <Text style={{ ...styles.ProductPrice }}>
+              <IconMaterial
+                name="attach-money"
+                color={Themes.COLORS.brightRed}
+                size={Themes.PROPERTIVE.h1}
+              />
+              {productDetails.price}
+            </Text>
+          </View>
           <ScrollView showsVerticalScrollIndicator={false}>
             <Text style={{ ...styles.ProductDescription }}>
               {productDetails.description + productDetails.shortDescription}
@@ -144,30 +155,33 @@ function Detail({ navigation, route }) {
           <FlatList
             horizontal
             showsHorizontalScrollIndicator={false}
+            ItemSeparatorComponent={() => <View style={{ width: 20 }} />}
             style={{ ...Themes.FLATLISTRESET.Grow }}
             data={productDetails.relatedProducts}
             keyExtractor={(item) => item.name}
             renderItem={({ item }) => (
-              <TouchableHighlight
-                underlayColor={Themes.COLORS.darkGray}
+              <TouchableOpacity
+                activeOpacity={0.8}
                 onPress={() =>
                   navigation.push(SCREEN.DETAIL, { product: item })
-                }
-                style={{ ...styles.ProductRelatedItem }}>
-                <View>
-                  <SharedElement id={`id.${item.alias}.photo`}>
-                    <Image
-                      style={{ ...styles.ProductRelatedImage }}
-                      source={{ uri: item.image }}
-                    />
-                  </SharedElement>
+                }>
+                <GlassView style={{ ...styles.ProductRelatedItem }}>
                   <View>
-                    <Text style={{ ...styles.ProductRelatedName }}>
-                      {item.name}
-                    </Text>
+                    <SharedElement id={`id.${item.alias}.photo`}>
+                      <Image
+                        style={{ ...styles.ProductRelatedImage }}
+                        source={{ uri: item.image }}
+                        resizeMode="contain"
+                      />
+                    </SharedElement>
+                    <View style={{ flex: 1 }}>
+                      <Text style={{ ...styles.ProductRelatedName }}>
+                        {item.name}
+                      </Text>
+                    </View>
                   </View>
-                </View>
-              </TouchableHighlight>
+                </GlassView>
+              </TouchableOpacity>
             )}
           />
         </Animated.View>

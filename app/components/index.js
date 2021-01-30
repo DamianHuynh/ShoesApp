@@ -1,3 +1,4 @@
 import GlassView from './GlassView';
 import BackgroundView from './BackgroundView';
-export { GlassView, BackgroundView };
+import Loading from './Loading';
+export { GlassView, BackgroundView, Loading };

@@ -1,4 +1,4 @@
-import * as ProductTypes from '../constaint/ProductTypes';
+import * as ProductTypes from '../constant/ProductTypes';
 
 const initialState = {
   allCategory: [],

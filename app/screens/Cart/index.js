@@ -23,7 +23,7 @@ import { BackgroundView, GlassView } from '../../components';
 import CategoryID from './CategoryID';
 import BestSellItem from './BestSellItem';
 
-export default function Cart({ navigation }) {
+function Cart({ navigation }) {
   const [idCategory, setIdCategory] = useState(DEFAULT_ID_CATEGORY);
 
   const dispatch = useDispatch();
@@ -115,16 +115,11 @@ export default function Cart({ navigation }) {
   );
 }
 
+export default Cart;
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-  },
-  absolute: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
   },
   Title: {
     fontSize: 24,
