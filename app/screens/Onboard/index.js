@@ -13,28 +13,28 @@ const SLIDES = [
     subtitle: 'A New Walk Of Fife',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisciet praesentium.',
-    image: require('../../assets/images/onbroad_1.jpg'),
+    image: require('../../assets/images/onboard_1.jpg'),
   },
   {
     color: '#8bbd67',
     subtitle: 'Be Comfy, Be The Best',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisciet praesentium.',
-    image: require('../../assets/images/onbroad_2.jpg'),
+    image: require('../../assets/images/onboard_2.jpg'),
   },
   {
     color: '#f7c78a',
     subtitle: 'Desire The Feel Of Satisfaction',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisciet praesentium.',
-    image: require('../../assets/images/onbroad_3.jpg'),
+    image: require('../../assets/images/onboard_3.jpg'),
   },
   {
     color: '#94664c',
     subtitle: 'Creation For Creative Peoples',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisciet praesentium.',
-    image: require('../../assets/images/onbroad_4.jpg'),
+    image: require('../../assets/images/onboard_4.jpg'),
   },
 ];
 
