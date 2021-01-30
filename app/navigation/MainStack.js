@@ -2,17 +2,19 @@
 import React, { useEffect, useRef } from 'react';
 import { Easing, Animated } from 'react-native';
 import { createSharedElementStackNavigator } from 'react-navigation-shared-element';
-import DetailsNoAnimated from '../screens/DetailsNoAnimated';
-import HomeScreen from '../screens/Home';
-import DetailScreen from '../screens/Detail';
-import LoginScreen from '../screens/Login';
-import CartScreen from '../screens/Cart';
-import OnboardScreen from '../screens/Onboard';
 import { SCREEN } from './Constant';
+import {
+  HomeScreen,
+  DetailScreen,
+  LoginScreen,
+  CartScreen,
+  OnboardScreen,
+  DetailsNoAnimatedScreen,
+} from '../screens';
 
 const Stack = createSharedElementStackNavigator();
 
-const OpacityTransiton = () => ({
+const OpacityTransition = () => ({
   gestureEnabled: false,
   transitionSpec: {
     open: {
@@ -32,7 +34,7 @@ const OpacityTransiton = () => ({
     };
   },
 });
-const SmoothTransiton = () => ({
+const SmoothTransition = () => ({
   gestureEnabled: false,
   transitionSpec: {
     open: {
@@ -45,7 +47,7 @@ const SmoothTransiton = () => ({
     },
   },
 });
-const FromBotTransiton = () => ({
+const FromBotTransition = () => ({
   gestureEnabled: false,
   transitionSpec: {
     open: {
@@ -118,26 +120,22 @@ export default function MainStack(props) {
     <Animated.View style={{ flex: 1, transform: [{ scale }] }}>
       <Stack.Navigator headerMode="none">
         <Stack.Screen name={SCREEN.ONBOARD} component={OnboardScreen} />
+        <Stack.Screen name={SCREEN.CART} component={CartScreen} />
         <Stack.Screen name={SCREEN.HOME} component={HomeScreen} />
         <Stack.Screen
           name={SCREEN.DETAIL_NO_ANIMATION}
-          component={DetailsNoAnimated}
-          options={SmoothTransiton}
+          component={DetailsNoAnimatedScreen}
+          options={SmoothTransition}
         />
         <Stack.Screen
           name={SCREEN.DETAIL}
           component={DetailScreen}
-          options={OpacityTransiton}
+          options={OpacityTransition}
         />
         <Stack.Screen
           name={SCREEN.LOGIN}
           component={LoginScreen}
-          options={FromBotTransiton}
-        />
-        <Stack.Screen
-          name={SCREEN.CART}
-          component={CartScreen}
-          options={FromBotTransiton}
+          options={FromBotTransition}
         />
       </Stack.Navigator>
     </Animated.View>

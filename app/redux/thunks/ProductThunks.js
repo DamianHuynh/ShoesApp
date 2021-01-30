@@ -1,10 +1,10 @@
-import { productServices } from '../../services/ProductSevices';
+import { productServices } from '../../services/ProductServices';
 import * as ProductActions from '../actions/ProductActions';
 
 export const getAllCategory = () => {
   return (dispatch) => {
     productServices
-      .getAllCategory()
+      .getListCategory()
       .then(({ data: { content } }) =>
         dispatch(ProductActions.getAllCategorySuccess(content)),
       )
@@ -14,7 +14,7 @@ export const getAllCategory = () => {
 export const getProductByCategory = (id) => {
   return (dispatch) => {
     productServices
-      .getProductByCategory(id)
+      .getListProductByCategory(id)
       .then(({ data: { content } }) =>
         dispatch(ProductActions.getProductByCategorySuccess(content)),
       )
@@ -24,7 +24,7 @@ export const getProductByCategory = (id) => {
 export const getProductById = (id) => {
   return (dispatch) => {
     productServices
-      .getProductById(id)
+      .getListProductById(id)
       .then(({ data: { content } }) =>
         dispatch(ProductActions.getProductByIdSuccess(content)),
       )
@@ -34,9 +34,9 @@ export const getProductById = (id) => {
 export const getProductBestSell = () => {
   return (dispatch) => {
     productServices
-      .getProductBestSell()
+      .getListProductBestSell()
       .then(({ data: { content } }) =>
-        dispatch(ProductActions.getProductBestSell(content)),
+        dispatch(ProductActions.getProductBestSellSuccess(content)),
       )
       .catch(() => dispatch());
   };

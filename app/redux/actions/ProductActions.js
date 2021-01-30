@@ -14,7 +14,7 @@ export const getProductByIdSuccess = (respone) => ({
   payload: respone,
 });
 
-export const getProductBestSell = (respone) => ({
+export const getProductBestSellSuccess = (respone) => ({
   type: ProductTypes.GET_PRODUCT_BEST_SELL_SUCCESS,
   payload: respone,
 });

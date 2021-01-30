@@ -4,5 +4,5 @@ export const SCREEN = {
   DETAIL: 'DETAIL',
   DETAIL_NO_ANIMATION: 'DETAIL_NO_ANIMATION',
   LOGIN: 'LOGIN',
-  CART: 'CRART',
+  CART: 'CART',
 };

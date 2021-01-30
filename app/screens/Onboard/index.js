@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { View, StyleSheet, Animated, Image } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import { COLORS, PROPERTIVE } from '../../config/styles';
+import { SCREEN } from '../../navigation/Constant';
 import Dot from './Dot';
 import Slide from './Slide';
 import Subtitle from './Subtitle';
@@ -37,7 +38,7 @@ const SLIDES = [
   },
 ];
 
-export default function Onboard() {
+export default function Onboard({ navigation }) {
   const x = useRef(new Animated.Value(0)).current;
   const scroll = useRef();
   const inputRange = SLIDES.map((_, i) => PROPERTIVE.width * i);
@@ -52,8 +53,10 @@ export default function Onboard() {
     outputRange: SLIDES.map((_, i) => PROPERTIVE.width * -i),
   });
 
-  const onNext = (index) => {
-    if (scroll.current) {
+  const onNext = (index, last) => {
+    if (last) {
+      navigation.push(SCREEN.CART);
+    } else if (scroll.current) {
       scroll.current.scrollTo({
         x: PROPERTIVE.width * index,
         animated: true,
@@ -122,7 +125,7 @@ export default function Onboard() {
               <Subtitle
                 key={index}
                 onPress={() => {
-                  onNext(index + 1);
+                  onNext(index + 1, index === SLIDES.length - 1);
                 }}
                 last={index === SLIDES.length - 1}
                 {...{ subtitle, description, x }}

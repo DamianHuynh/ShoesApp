@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.13.2",
+    "@react-native-community/blur": "^3.6.0",
     "@react-native-community/masked-view": "^0.1.10",
     "@react-navigation/bottom-tabs": "^5.11.2",
     "@react-navigation/drawer": "^5.11.4",
@@ -19,6 +20,7 @@
     "@react-navigation/stack": "^5.12.8",
     "axios": "^0.21.0",
     "curved-bottom-navigation-bar": "^1.0.6",
+    "formik": "2.2.5",
     "react": "16.13.1",
     "react-native": "0.63.4",
     "react-native-gesture-handler": "^1.9.0",
@@ -34,7 +36,6 @@
     "react-redux": "7.2.1",
     "redux": "4.0.5",
     "redux-thunk": "2.3.0",
-    "formik": "2.2.5",
     "yup": "0.30.0"
   },
   "devDependencies": {

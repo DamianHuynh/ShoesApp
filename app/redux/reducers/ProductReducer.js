@@ -23,6 +23,11 @@ const ProductReducer = (state = initialState, { type, payload }) => {
       return { ...state };
     }
     case ProductTypes.GET_PRODUCT_BEST_SELL_SUCCESS: {
+      payload = payload.map(({ shortDescription, ...item }) => {
+        shortDescription = shortDescription.replace(/(\r\n|\n|\r)/gm, '');
+        return { ...item, shortDescription };
+      });
+
       state.bestSellProduct = payload;
       return { ...state };
     }

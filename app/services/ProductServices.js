@@ -2,16 +2,16 @@ import BaseService from './BaseService';
 
 const PREFIX = 'Product';
 export class ProductServices extends BaseService {
-  getAllCategory() {
+  getListCategory() {
     return this.get(`/${PREFIX}/getAllCategory`);
   }
-  getProductByCategory(id) {
+  getListProductByCategory(id) {
     return this.get(`/${PREFIX}/getProductByCategory?categoryId=${id}`);
   }
-  getProductById(id) {
+  getListProductById(id) {
     return this.get(`/${PREFIX}/getbyid?id=${id}`);
   }
-  getProductBestSell() {
+  getListProductBestSell() {
     return this.get(`/${PREFIX}/getProductByFeature?feature=true`);
   }
 }
