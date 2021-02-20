@@ -11,6 +11,7 @@ import CheckBox from '../../components/CheckBox';
 import LinearGradient from 'react-native-linear-gradient';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
+import { SCREEN } from '../../navigation/Constant';
 
 const colors = ['#ff8368', COLORS.brightRed];
 
@@ -32,7 +33,7 @@ export default function Login({ navigation }) {
           validationSchema={LoginSchema}
           onSubmit={(values) => {
             if (values) {
-              navigation.navigate('HOME');
+              navigation.navigate(SCREEN.HOME);
             }
           }}>
           {({

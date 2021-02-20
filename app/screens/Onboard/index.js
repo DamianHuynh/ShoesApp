@@ -55,7 +55,7 @@ export default function Onboard({ navigation }) {
 
   const onNext = (index, last) => {
     if (last) {
-      navigation.push(SCREEN.CART);
+      navigation.replace(SCREEN.HOME);
     } else if (scroll.current) {
       scroll.current.scrollTo({
         x: PROPERTIVE.width * index,

@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { COLORS, FLATLISTRESET, PROPERTIVE } from '../../config/styles';
+import { FLATLISTRESET, PROPERTIVE } from '../../config/styles';
 
 export default StyleSheet.create({
   Header: {
@@ -14,8 +14,6 @@ export default StyleSheet.create({
     aspectRatio: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    borderColor: COLORS.darkGray,
-    borderWidth: 1,
     borderRadius: PROPERTIVE.radius15,
   },
   ProductOverView: {
@@ -35,7 +33,7 @@ export default StyleSheet.create({
     marginRight: PROPERTIVE.space2,
     paddingVertical: PROPERTIVE.space1,
     paddingHorizontal: PROPERTIVE.space3,
-    borderColor: COLORS.brightRed,
+    borderColor: '#ffffff80',
     borderWidth: 1,
     borderRadius: PROPERTIVE.radius10,
   },
@@ -43,7 +41,6 @@ export default StyleSheet.create({
     alignSelf: 'flex-end',
     height: 50,
     aspectRatio: 2 / 1,
-    backgroundColor: COLORS.brightRed,
     borderRadius: PROPERTIVE.radius10,
   },
   BuyButtonContent: {
@@ -51,17 +48,21 @@ export default StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-evenly',
     alignItems: 'center',
+    borderColor: '#ffffff80',
+    borderWidth: 1,
+    borderRadius: PROPERTIVE.radius10,
   },
   BuyButtonTxt: {
-    color: COLORS.white,
-    fontSize: PROPERTIVE.h2,
+    fontFamily: 'Poppins-Regular',
+    fontSize: 16,
   },
   ProductInfo: {
     flex: 2,
   },
   ProductName: {
-    fontSize: PROPERTIVE.h1 * 1.3,
-    fontWeight: PROPERTIVE.bold,
+    fontSize: 24,
+    fontFamily: 'Poppins-Regular',
+    flexBasis: '70%',
   },
   ProductPrice: {
     fontSize: PROPERTIVE.h1 * 1.5,
@@ -76,15 +77,16 @@ export default StyleSheet.create({
   },
   ProductRelatedItem: {
     width: 140,
-    aspectRatio: 1,
-    justifyContent: 'space-evenly',
-    backgroundColor: COLORS.lightGray,
-    marginRight: PROPERTIVE.space3,
-    paddingHorizontal: PROPERTIVE.space2,
     borderRadius: PROPERTIVE.radius10,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   ProductRelatedImage: {
-    width: 100,
-    aspectRatio: 2 / 1.2,
+    width: '100%',
+    height: 100,
+  },
+  ProductRelatedName: {
+    fontFamily: 'Poppins-Regular',
+    fontSize: 14,
   },
 });

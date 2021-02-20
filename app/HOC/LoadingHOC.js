@@ -9,13 +9,5 @@ const withLoading = (Component) => ({ isLoading, children }) => {
     </>
   );
 };
-//   return function WithLoadingWrapper({ children }) {
-//     const { loading } = useSelector((state) => state.LoadingReducer);
-//     if (!loading) {
-//       return <Component>{children}</Component>;
-//     }
-//     return <Loading />;
-//   };
-// }
 
 export default withLoading;

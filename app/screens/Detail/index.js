@@ -53,6 +53,8 @@ function Detail({ navigation, route }) {
       .catch((err) => console.log(err));
   }, [product.id]);
 
+  console.log(`id.${product.alias}.photo`);
+
   return (
     <BackgroundView>
       <SafeAreaView style={[{ flex: 1, magrinHorizontal: 20 }]}>

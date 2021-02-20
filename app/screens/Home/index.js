@@ -73,9 +73,11 @@ export default function HomeScreens({ navigation }) {
         <View style={{ ...styles.CardBackground }} />
         <TouchableOpacity
           style={{ ...styles.ImageProduct }}
-          onPress={() =>
-            navigation.push(SCREEN.DETAIL, { product: productItem })
-          }>
+          onPress={() => {
+            console.log(`id.${productItem.alias}.photo`);
+
+            navigation.push(SCREEN.DETAIL, { product: productItem });
+          }}>
           <SharedElement
             id={`id.${productItem.alias}.photo`}
             style={{ ...StyleSheet.absoluteFillObject }}>

@@ -10,7 +10,11 @@ export default function Loading() {
       blurType="light"
       style={[StyleSheet.absoluteFill, styles.Container]}>
       <View style={[StyleSheet.absoluteFill, styles.BackDrop]} />
-      <LottieView autoPlay source={require('../../animated/loading.json')} />
+      <LottieView
+        autoPlay
+        source={require('../../animated/loading.json')}
+        style={styles.Loading}
+      />
     </BlurView>
   );
 }
@@ -21,5 +25,8 @@ const styles = StyleSheet.create({
   },
   BackDrop: {
     backgroundColor: '#00000080',
+  },
+  Loading: {
+    transform: [{ scale: 0.7 }],
   },
 });

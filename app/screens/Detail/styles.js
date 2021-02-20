@@ -62,6 +62,7 @@ export default StyleSheet.create({
   ProductName: {
     fontSize: 24,
     fontFamily: 'Poppins-Regular',
+    flexBasis: '70%',
   },
   ProductPrice: {
     fontSize: PROPERTIVE.h1 * 1.5,

@@ -1,4 +1,5 @@
 import GlassView from './GlassView';
 import BackgroundView from './BackgroundView';
 import Loading from './Loading';
-export { GlassView, BackgroundView, Loading };
+import CustomTabBar from './CustomTabbar';
+export { GlassView, BackgroundView, Loading, CustomTabBar };

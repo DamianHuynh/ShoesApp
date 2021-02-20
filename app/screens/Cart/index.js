@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React, { useEffect, useState } from 'react';
 import {
   View,
@@ -129,7 +130,6 @@ const styles = StyleSheet.create({
   },
   Header: {
     flex: 1,
-    // paddingHorizontal: 20,
   },
   HeaderContent: {
     flexDirection: 'row',
@@ -143,14 +143,15 @@ const styles = StyleSheet.create({
     width: 50,
   },
   ProductList: {
-    flex: 4,
+    flex: 5,
+    marginBottom: 10,
   },
   ProductCategory: {
     padding: 20,
     marginBottom: 10,
   },
   BestSell: {
-    flex: 4,
+    flex: 5,
   },
   BestSellContent: {
     flex: 1,

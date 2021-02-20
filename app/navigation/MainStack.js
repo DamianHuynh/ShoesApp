@@ -11,11 +11,12 @@ import {
   OnboardScreen,
   DetailsNoAnimatedScreen,
 } from '../screens';
+import MainTab from './MainTab';
 
 const Stack = createSharedElementStackNavigator();
 
 const OpacityTransition = () => ({
-  gestureEnabled: false,
+  // gestureEnabled: false,
   transitionSpec: {
     open: {
       animation: 'timing',
@@ -35,7 +36,7 @@ const OpacityTransition = () => ({
   },
 });
 const SmoothTransition = () => ({
-  gestureEnabled: false,
+  // gestureEnabled: false,
   transitionSpec: {
     open: {
       animation: 'timing',
@@ -119,9 +120,9 @@ export default function MainStack(props) {
   return (
     <Animated.View style={{ flex: 1, transform: [{ scale }] }}>
       <Stack.Navigator headerMode="none">
-        <Stack.Screen name={SCREEN.CART} component={CartScreen} />
         <Stack.Screen name={SCREEN.ONBOARD} component={OnboardScreen} />
-        <Stack.Screen name={SCREEN.HOME} component={HomeScreen} />
+        <Stack.Screen name={SCREEN.HOME} component={MainTab} />
+        <Stack.Screen name={SCREEN.CART} component={CartScreen} />
         <Stack.Screen
           name={SCREEN.DETAIL_NO_ANIMATION}
           component={DetailsNoAnimatedScreen}
@@ -135,7 +136,7 @@ export default function MainStack(props) {
         <Stack.Screen
           name={SCREEN.LOGIN}
           component={LoginScreen}
-          options={FromBotTransition}
+          options={OpacityTransition}
         />
       </Stack.Navigator>
     </Animated.View>

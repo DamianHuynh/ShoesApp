@@ -13,12 +13,14 @@ export default function ProductItem({ productItem }) {
   return (
     <GlassView transparent style={styles.ProductContainer}>
       <TouchableOpacity
-        onPress={() =>
-          navigation.push(SCREEN.DETAIL, { product: productItem })
-        }>
+        style={styles.ProductImage}
+        onPress={() => {
+          console.log(`id.${productItem.alias}.photo`);
+          navigation.push(SCREEN.DETAIL_NO_ANIMATION, { product: productItem });
+        }}>
         <SharedElement
           id={`id.${productItem.alias}.photo`}
-          style={styles.ProductImage}>
+          style={StyleSheet.absoluteFill}>
           <Image
             source={{ uri: productItem.image }}
             style={StyleSheet.absoluteFill}

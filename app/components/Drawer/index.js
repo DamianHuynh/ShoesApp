@@ -17,32 +17,33 @@ export default function CustomDrawer(props) {
             flex: 1,
             justifyContent: 'center',
             alignItems: 'center',
-            width: 80,
-            aspectRatio: 1,
-            borderWidth: 1,
-            borderColor: COLORS.darkGray,
-            borderRadius: 60,
+            width: '100%',
           }}>
           <Image
-            source={{ uri: 'http://svcy3.myclass.vn/images/user-icon.png' }}
-            style={{
-              width: 79,
-              aspectRatio: 1,
-              borderRadius: 60,
+            source={{
+              uri:
+                'https://cybersoft.edu.vn/wp-content/uploads/2017/03/MIN-OP1.png',
             }}
+            style={{
+              height: 170,
+              aspectRatio: 1,
+              // borderRadius: 60,
+            }}
+            resizeMode="contain"
           />
         </View>
         <DrawerItem
+          labelStyle={{ fontFamily: 'Poppins-Regular', fontSize: 18 }}
           label="Login"
           onPress={() => props.navigation.navigate(SCREEN.LOGIN)}
         />
       </View>
-      <View>
+      {/* <View>
         <DrawerItem
           label="Login"
           onPress={() => props.navigation.navigate(SCREEN.LOGIN)}
         />
-      </View>
+      </View> */}
     </DrawerContentScrollView>
   );
 }

@@ -9,7 +9,9 @@ export const getAllCategory = () => {
       .getListCategory()
       .then(({ data: { content } }) => {
         dispatch(ProductActions.getAllCategorySuccess(content));
-        dispatch(ChangeLoading(false));
+        setTimeout(() => {
+          dispatch(ChangeLoading(false));
+        }, 1000);
       })
       .catch(() => dispatch(ChangeLoading(false)));
   };
@@ -21,7 +23,9 @@ export const getProductByCategory = (id) => {
       .getListProductByCategory(id)
       .then(({ data: { content } }) => {
         dispatch(ProductActions.getProductByCategorySuccess(content));
-        dispatch(ChangeLoading(false));
+        setTimeout(() => {
+          dispatch(ChangeLoading(false));
+        }, 1000);
       })
       .catch(() => dispatch(ChangeLoading(false)));
   };
@@ -32,7 +36,9 @@ export const getProductById = (id) => {
     productServices
       .getListProductById(id)
       .then(({ data: { content } }) => {
-        dispatch(ChangeLoading(false));
+        setTimeout(() => {
+          dispatch(ChangeLoading(false));
+        }, 1000);
         dispatch(ProductActions.getProductByIdSuccess(content));
       })
       .catch(() => dispatch(ChangeLoading(false)));
@@ -45,7 +51,9 @@ export const getProductBestSell = () => {
       .getListProductBestSell()
       .then(({ data: { content } }) => {
         dispatch(ProductActions.getProductBestSellSuccess(content));
-        dispatch(ChangeLoading(false));
+        setTimeout(() => {
+          dispatch(ChangeLoading(false));
+        }, 1000);
       })
       .catch(() => dispatch(ChangeLoading(false)));
   };
