@@ -20,10 +20,11 @@
 		5C4FC89A339A227A260BD0B0 /* libPods-ShoesApp-ShoesAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF2642572335C87C6D1B8D5C /* libPods-ShoesApp-ShoesAppTests.a */; };
 		62B1A5E8720640D0A1E47378 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BFA2FA5FDB504867A5068A9C /* Poppins-Bold.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		985A20B9D00C40939DD939D7 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 794F2FDB0D9F427E9C052EF7 /* Poppins-SemiBold.ttf */; };
 		9E972CB13D9BED09D2B6038E /* libPods-ShoesApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 612B6E8983183A1DA4FEC789 /* libPods-ShoesApp.a */; };
 		E380F2B5BE780A355902EAF5 /* libPods-ShoesApp-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B7901E9F7D3FC255F36226C /* libPods-ShoesApp-tvOSTests.a */; };
 		E42E23037DB358447D843569 /* libPods-ShoesApp-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B03B2853C128AAAAB9600B52 /* libPods-ShoesApp-tvOS.a */; };
-		985A20B9D00C40939DD939D7 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 794F2FDB0D9F427E9C052EF7 /* Poppins-SemiBold.ttf */; };
+		F10DF1FD2689287800C7F33D /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10DF1FC2689287800C7F33D /* File.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		612B6E8983183A1DA4FEC789 /* libPods-ShoesApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ShoesApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		652B00A2E347678488D2901C /* Pods-ShoesApp-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoesApp-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-ShoesApp-tvOSTests/Pods-ShoesApp-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		6B7901E9F7D3FC255F36226C /* libPods-ShoesApp-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ShoesApp-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		794F2FDB0D9F427E9C052EF7 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-SemiBold.ttf"; path = "../app/assets/font/Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		7BC9BE09D8BD4941B66EE3DD /* Poppins-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Regular.ttf"; path = "../app/assets/font/Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		7F81EE1A08CA43698ED86BDA /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = ShoesApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -90,8 +92,9 @@
 		EC46912872376D0C116A9FAA /* Pods-ShoesApp-ShoesAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoesApp-ShoesAppTests.release.xcconfig"; path = "Target Support Files/Pods-ShoesApp-ShoesAppTests/Pods-ShoesApp-ShoesAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
+		F10DF1FB2689287800C7F33D /* ShoesApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ShoesApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		F10DF1FC2689287800C7F33D /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		F1DCEAE839CF47B7B6EB743B /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
-		794F2FDB0D9F427E9C052EF7 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; name = "Poppins-SemiBold.ttf"; path = "../app/assets/font/Poppins-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +160,8 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				F10DF1FC2689287800C7F33D /* File.swift */,
+				F10DF1FB2689287800C7F33D /* ShoesApp-Bridging-Header.h */,
 			);
 			name = ShoesApp;
 			sourceTree = "<group>";
@@ -347,7 +352,8 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						LastSwiftMigration = 1120;
+						DevelopmentTeam = 5497JG2FX6;
+						LastSwiftMigration = 1230;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -521,6 +527,7 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-ShoesApp-ShoesAppTests/Pods-ShoesApp-ShoesAppTests-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FBSDKCoreKit/FacebookSDKStrings.bundle",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Entypo.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf",
@@ -541,6 +548,7 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FacebookSDKStrings.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AntDesign.ttf",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Entypo.ttf",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/EvilIcons.ttf",
@@ -571,6 +579,7 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-ShoesApp/Pods-ShoesApp-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FBSDKCoreKit/FacebookSDKStrings.bundle",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Entypo.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf",
@@ -591,6 +600,7 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FacebookSDKStrings.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AntDesign.ttf",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Entypo.ttf",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/EvilIcons.ttf",
@@ -690,6 +700,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				F10DF1FD2689287800C7F33D /* File.swift in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -731,6 +742,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5F1990792C2CC8F5A6719506 /* Pods-ShoesApp-ShoesAppTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -754,6 +766,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EC46912872376D0C116A9FAA /* Pods-ShoesApp-ShoesAppTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = ShoesAppTests/Info.plist;
@@ -777,6 +790,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5497JG2FX6;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = ShoesApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -785,8 +799,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = datht.cybersoft.ShoesApp;
 				PRODUCT_NAME = ShoesApp;
+				SWIFT_OBJC_BRIDGING_HEADER = "ShoesApp-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -800,6 +815,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5497JG2FX6;
 				INFOPLIST_FILE = ShoesApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -807,8 +823,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = datht.cybersoft.ShoesApp;
 				PRODUCT_NAME = ShoesApp;
+				SWIFT_OBJC_BRIDGING_HEADER = "ShoesApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { View, Text } from 'react-native';
 import styles from './styles';
 import FormContainer from '../../components/FormContainer';
@@ -12,6 +12,8 @@ import LinearGradient from 'react-native-linear-gradient';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { SCREEN } from '../../navigation/Constant';
+import { userServices } from '../../services/UserService';
+import { getString, setString } from '../../utils/Storage';
 
 const colors = ['#ff8368', COLORS.brightRed];
 
@@ -24,6 +26,13 @@ const LoginSchema = Yup.object().shape({
 });
 
 export default function Login({ navigation }) {
+  useEffect(() => {
+    const getAccessToken = async () => {
+      const result = await getString('accessToken');
+      console.log(result);
+    };
+    getAccessToken();
+  }, []);
   return (
     <FormContainer footer={<Footer />}>
       <View style={{ padding: PROPERTIVE.space3 }}>
@@ -32,9 +41,26 @@ export default function Login({ navigation }) {
           initialValues={{ email: '', password: '', remember: false }}
           validationSchema={LoginSchema}
           onSubmit={(values) => {
-            if (values) {
-              navigation.navigate(SCREEN.HOME);
-            }
+            userServices
+              .userLogin(values)
+              .then(async (res) => {
+                try {
+                  const {
+                    data: {
+                      content: { accessToken },
+                    },
+                  } = res;
+                  console.log(accessToken);
+
+                  const result = await setString('accessToken', accessToken);
+                  if (result) {
+                    navigation.navigate(SCREEN.HOME);
+                  }
+                } catch (error) {
+                  console.log(error);
+                }
+              })
+              .catch((err) => console.log(err));
           }}>
           {({
             handleChange,
